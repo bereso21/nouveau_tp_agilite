@@ -1,11 +1,12 @@
-package main;
+package foot;
 
+import factory.Personne;
 /**
  * @author AGOUZZAL & LECHLECH 
  * @version 1.1
  */
 
-public class Joueur {
+public class Joueur extends Personne{
 
     // variable d'instance indiquant le nom du joueur
     private String nomJoueur;

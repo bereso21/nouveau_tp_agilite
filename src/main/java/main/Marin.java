@@ -1,5 +1,6 @@
 package main;
 
+import factory.Personne;
 /**
  * Write a description of class Bateau here.
  *
@@ -7,7 +8,7 @@ package main;
  * @version v1
  */
 
-public class Marin {
+public class Marin extends Personne implements IBateau {
 
 	private boolean proprietaireBateau;
 	private int age;
@@ -30,6 +31,21 @@ public class Marin {
 			return false;
 		else   
 			return true;
+	}
+	
+	@Override
+	public void addBateau(Bateau bateau) {
+		// TODO Auto-generated method stub
+		if(bateau.getPrix() > this.portefeuille) {
+			System.out.println("Vous n'avez pas assez d'argent pour acheter le bateau "+bateau.getNom()+".");
+		}
+		else {
+
+			transactionBateau(bateau);
+
+			System.out.println("Achat effectué de votre bateau "+bateau.getNom()+"! Il vous reste "+this.portefeuille+" euros.");
+		}
+
 	}
 
 	public String achatBateau(Bateau bateau) {
