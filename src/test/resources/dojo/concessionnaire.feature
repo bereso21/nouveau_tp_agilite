@@ -18,7 +18,7 @@
 #Sample Feature Definition Template
 @Concessionnaire
 Feature: F002
-  En tant que client je veux qu un concessionaire puisse acheter et vendre plusieurs bateau
+  En tant que client je veux qu un concessionnaire puisse acheter et vendre plusieurs bateau
 
   @achatConcession
   Scenario Outline: Acheter plusieurs bateaux
@@ -28,9 +28,9 @@ Feature: F002
     Then Les bateaux sont achetés
     
     Examples: 
-      | bateau1  | bateau2 | prix1  | prix2 |
-      | Saphir   | BlackP  | 5000   | 10000 |
-      | Pie      | Thon    | 300    | 200   |
+      | bateau1    | bateau2  | prix1  | prix2 |
+      | Croisette  | Titanic  | 5000   | 10000 |
+      | Pie        | Thon     | 300    | 200   |
       
   @venteClient
   Scenario Outline: Vendre un bateau a un client
@@ -40,6 +40,6 @@ Feature: F002
     Then Un bateau est acheté
     
     Examples: 
-      | bateau1  | bateau2 | prix1  | prix2 | age | portefeuille |
-      | Saphir   | BlackP  | 5000   | 10000 | 23  | 15000        |
-      | Pie      | Thon    | 3000   | 2000  | 15  | 5000         |
+      | bateau1     | bateau2  | prix1  | prix2 | age | portefeuille |
+      | Croisette   | Titanic  | 5000   | 10000 | 23  | 15000        |
+      | Pie         | Thon     | 3000   | 2000  | 15  | 5000         |

@@ -27,9 +27,8 @@ Feature: F001
     Then Romeo achete le bateau
     
     Examples: 
-      | age  | portefeuille | nom        | prix  |
-      | 23   | 8000         | Saphir     | 5000  |
-      | 73   | 15000        | Blackpearl | 10000 |
+      | age  | portefeuille | nom        | prix   |
+      | 26   | 13000        | Blackpearl | 10000  |
    
   @achatNOk
   Scenario Outline: La marin n a pas assez d argent 
@@ -40,7 +39,6 @@ Feature: F001
     
     Examples: 
       | age  | portefeuille | nom        | prix  |
-      | 23   | 3000         | Saphir     | 5000  |
-      | 73   | 5000         | Blackpearl | 10000 |     
+      | 26   | 3000         | Saphir     | 5000  |
         
  
