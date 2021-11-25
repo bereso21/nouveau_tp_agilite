@@ -9,6 +9,10 @@ public class Club {
     ArrayList<Joueur> joueurs = new ArrayList<Joueur>();
     Joueur capitaine;
     private Sponsor sponsor;
+    
+    public Club() {
+        this.nomClub = "";
+    }
 
 
     public Club(String nomJoueur, ArrayList<Joueur> joueurs)

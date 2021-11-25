@@ -12,6 +12,10 @@ public class Coach extends Personne{
 		this.nomCoach = "";
 	}
 	
+	public Club getClub() {
+		return this.club;
+	}
+	
 	public Coach(Club club, String nomCoach) {
 		this.club = club;
 		this.nomCoach = nomCoach;

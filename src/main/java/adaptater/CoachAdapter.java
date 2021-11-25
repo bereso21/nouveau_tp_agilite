@@ -24,5 +24,11 @@ public class CoachAdapter implements IAction{
 		this.coach.virerUnJoueur((Joueur) o);
 		
 	}
+	
+	public Coach getCoach() {
+		// TODO Auto-generated method stub
+		return this.coach;
+		
+	}
 
 }

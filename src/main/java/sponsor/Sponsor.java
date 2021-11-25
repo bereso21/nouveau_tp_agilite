@@ -39,7 +39,7 @@ public class Sponsor extends ConcessionnaireBateau{
     		return this.nomClub;
     	} else {
     		System.out.println("Ce concessionaire ne sponsorise pas de club");
-    		return null;
+    		return "Ce concessionaire ne sponsorise pas de club";
     	}
 	}
 	
