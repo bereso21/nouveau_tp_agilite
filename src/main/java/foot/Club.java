@@ -21,6 +21,10 @@ public class Club {
         this.joueurs=joueurs;
     }
     
+    public void setJoueurs(ArrayList<Joueur> joueurs) {
+		this.joueurs = joueurs;
+	}
+    
     public String getNomClub () {
         return this.nomClub;
     }
