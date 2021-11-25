@@ -16,11 +16,9 @@ public class Sponsor extends ConcessionnaireBateau{
 	public Sponsor(String nomSponsor) {
 		this.nomSponsor = nomSponsor;
 	}
-	
 	public void setSponsor(String nomSponsor) {
 		this.nomSponsor = nomSponsor;
 	}
-	
 	public Club getClub() {
 		if(this.club!=null) {
     		return this.club;
@@ -29,11 +27,9 @@ public class Sponsor extends ConcessionnaireBateau{
     		return null;
     	}
 	}
-	
 	public String getNomSponsor() {
 		return this.nomSponsor;
 	}
-	
 	public String getNomClub() {
 		if(this.nomClub!=null) {
     		return this.nomClub;
@@ -42,7 +38,6 @@ public class Sponsor extends ConcessionnaireBateau{
     		return "Ce concessionaire ne sponsorise pas de club";
     	}
 	}
-	
 	public void setClub(Club club) {
 		this.club = club;
 		this.nomClub = club.getNomClub();
