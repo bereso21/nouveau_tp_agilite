@@ -55,5 +55,4 @@ public class ConcessionnaireBateau {
 		this.bateaux = bateaux;
 	}
 
-
 }

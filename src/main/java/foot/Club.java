@@ -1,12 +1,14 @@
 package foot;
 
 import java.util.ArrayList;
+import sponsor.Sponsor;
 
 public class Club {
 	 
     private String nomClub;
     ArrayList<Joueur> joueurs = new ArrayList<Joueur>();
     Joueur capitaine;
+    private Sponsor sponsor;
 
 
     public Club(String nomJoueur, ArrayList<Joueur> joueurs)
@@ -63,5 +65,18 @@ public class Club {
     		return this.capitaine=joueur;
     	}
     	return capitaine;
+    }
+    
+    public void setSponsor(Sponsor sponsor) {
+    	this.sponsor = sponsor;
+    }
+    
+    public Sponsor getSponsor() {
+    	if(this.sponsor!=null) {
+    		return this.sponsor;
+    	} else {
+    		System.out.println("Ce club n'a pas de sponsor");
+    		return null;
+    	}
     }
 }
