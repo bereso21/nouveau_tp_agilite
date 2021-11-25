@@ -1,6 +1,7 @@
 package adaptater;
 
 import foot.Coach;
+import foot.Joueur;
 
 public class CoachAdapter implements IAction{
 	
@@ -13,12 +14,14 @@ public class CoachAdapter implements IAction{
 	@Override
 	public void ajouter(Object o) {
 		// TODO Auto-generated method stub
+		this.coach.ajouterUnJoueur((Joueur) o);
 		
 	}
 
 	@Override
 	public void suppression(Object o) {
 		// TODO Auto-generated method stub
+		this.coach.virerUnJoueur((Joueur) o);
 		
 	}
 
