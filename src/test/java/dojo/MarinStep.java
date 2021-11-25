@@ -13,14 +13,10 @@ import cucumber.api.java.en.When;
 import cucumber.api.java.en.And;
 import main.Marin;
 import main.Bateau;
-import main.ConcessionnaireBateau;
 
 public class MarinStep {
 	private Marin romeo;
 	private Bateau bateau;
-	private ConcessionnaireBateau Boatrental;
-	private Bateau bateau1;
-	private Bateau bateau2;
     @Given("Romeo a (\\d+) ans et (\\d+)€. Il veut acheter un bateau")
     public void romeo_veut_acheter_un_bateau(int age, double portefeuille) {
         // Write code here that turns the phrase above into concrete actions
@@ -62,27 +58,4 @@ public class MarinStep {
         Assert.assertEquals(romeo.achatBateau(this.bateau), "Vous n'avez pas assez d'argent");
     }
     
-    /*
-    @Given("Deux bateau (.*) et (.*)")
-	public void il_y_a_deux_bateau(String nom1, String nom2) {
-		this.bateau1.setNom(nom1);
-		this.bateau2.setNom(nom2);
-	}
-	@And("Ils ont un prix de (\\d+) et (\\d+)")
-	public void ils_ont_un_prix(double prix1, double prix2) {
-		this.bateau1.setPrix(prix1);
-		this.bateau2.setPrix(prix2);
-	}
-	@When("Le concessionnaire achete les bateaux")
-	public void le_concessionnaire_achete_les_bateaux() {
-		this.Boatrental.ajoutBateau(bateau1);
-		this.Boatrental.ajoutBateau(bateau2);
-	}
-	@Then("Les bateaux sont achetés")
-	public void les_bateaux_sont_achetés() {
-		ArrayList<Bateau> bateauTest = new ArrayList<Bateau>();
-		bateauTest.add(bateau1);
-		bateauTest.add(bateau2);
-		assertEquals(Boatrental, bateauTest);
-	}*/
 }

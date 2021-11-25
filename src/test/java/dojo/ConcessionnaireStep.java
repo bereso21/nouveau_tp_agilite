@@ -19,8 +19,9 @@ public class ConcessionnaireStep {
 	private ConcessionnaireBateau Boatrental;
 	private Bateau bateau1;
 	private Bateau bateau2;
+	private Marin romeo;
 	
-	@Given("Deux bateau (.*) et (.*)")
+	@Given("Deux bateaux (.*) et (.*)")
 	public void il_y_a_deux_bateau(String nom1, String nom2) {
 		this.bateau1 = new Bateau();
 		this.bateau2 = new Bateau();
@@ -44,6 +45,37 @@ public class ConcessionnaireStep {
 		bateauTest.add(bateau1);
 		bateauTest.add(bateau2);
 		assertEquals(Boatrental.getBateaux(), bateauTest);
+	}
+	@Given("Le concessionnaire a deux bateaux (.*) et (.*)")
+	public void concessionnaire_a_deux_bateau(String nom1, String nom2) {
+		this.bateau1 = new Bateau();
+		this.bateau2 = new Bateau();
+		this.bateau1.setNom(nom1);
+		this.bateau2.setNom(nom2);
+	}
+	@And("Ils ont respectivement un prix de (\\d+) et (\\d+)")
+	public void ils_ont_respectivement_un_prix(double prix1, double prix2) {
+		this.bateau1.setPrix(prix1);
+		this.bateau2.setPrix(prix2);
+		this.Boatrental = new ConcessionnaireBateau();
+		this.Boatrental.ajoutBateau(bateau1);
+		this.Boatrental.ajoutBateau(bateau2);
+		this.bateau1.setConcessionnaireBateau(Boatrental);
+		this.bateau2.setConcessionnaireBateau(Boatrental);
+	}
+	@When("Un marin de (\\d+) ans avec (\\d+)€ achete")
+	public void un_marin_veut_acheter(int age, double portefeuille) {
+		this.romeo = new Marin(age);
+		this.romeo.setPortefeuille(portefeuille);
+	}
+	@Then("Un bateau est acheté")
+	public void un_bateau_est_acheté() {
+		this.romeo.transactionBateau(this.bateau1);
+		
+		ArrayList<Bateau> bateauTest = new ArrayList<Bateau>();
+		bateauTest.add(bateau2);
+		assertEquals(Boatrental.getBateaux(), bateauTest);
+		assertEquals(romeo.isProprietaireBateau(), true);
 	}
 
 }

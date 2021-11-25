@@ -46,15 +46,21 @@ public class Marin {
 		}
 	}
 
-	private void transactionBateau(Bateau bateau) {
-		this.portefeuille = this.portefeuille - bateau.getPrix();
-		this.proprietaireBateau = true;
-		this.bateau = bateau;
-		
-		ConcessionnaireBateau concessionnaireBateau = bateau.getConcessionnaireBateau();
-		if(concessionnaireBateau != null) {
-			concessionnaireBateau.suppressionBateau(bateau);
+	public void transactionBateau(Bateau bateau) {
+		if(this.portefeuille > bateau.getPrix()) {
+			this.portefeuille = this.portefeuille - bateau.getPrix();
+			this.proprietaireBateau = true;
+			this.bateau = bateau;
+			
+			ConcessionnaireBateau concessionnaireBateau = bateau.getConcessionnaireBateau();
+			if(concessionnaireBateau != null) {
+				concessionnaireBateau.suppressionBateau(bateau);
+			}
+		} else {
+			System.out.println("Pas assez d'argent");
 		}
+		
+		
 	}
 
 	public boolean isProprietaireBateau() {
